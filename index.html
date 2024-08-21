@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
+    <title>Store Kodee Kuu</title>
+    <style>
+        body, html {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Navbar styles */
+        .navbar {
+    position: fixed; /* Ubah dari absolute menjadi fixed */
+    top: 0;
+    width: 100%;
+    padding: 10px 0; /* Sesuaikan padding sesuai kebutuhan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8); /* Tambahkan sedikit opasitas agar navbar lebih terlihat */
+    z-index: 1000;
+}
+
+
+        .brand-title {
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+/* Update burger-menu styles */
+.burger-menu {
+    display: none;
+}
+.burger-menu .line {
+    width: 40px; /* Adjust the size of the burger lines */
+    height: 3px;
+    background-color: #ffffff; /* Change color to gold */
+    margin: 10px 0; /* Adjust the spacing between the lines */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for a smoother effect */
+}
+
+/* Optional: You can also change the color of the lines when the menu is active */
+.burger-menu.active .line {
+    background-color: #FFFFFF; /* Change to white when active */
+}
+
+
+        .nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 10px; /* Menambahkan padding kiri untuk menggeser menu */
+}
+
+.nav-links li {
+    margin-left: 40px; /* Mengurangi margin kiri agar menu lebih rapat dan bergeser ke kiri */
+}
+
+        .nav-links a {
+          
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Ensure burger menu is hidden on larger screens */
+
+/* Update responsive design for smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the menu initially */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.8); /* Darker background for visibility */
+        position: absolute;
+        top: 60px; /* Position just below the navbar */
+        left: 0;
+        z-index: 999;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show the menu when activated */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .burger-menu {
+        display: block; /* Show the burger menu on smaller screens */
+    }
+
+    .navbar {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+        /* Home section styles */
+        #home {
+    margin-top: 60px; /* Sesuaikan nilai ini dengan tinggi navbar */
+    background: linear-gradient(5deg, #000000 30%, #1a1a9b 70%);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+   #EXPERIENCE {
+    margin-top: 500px;
+   }
+
+        
+
+        .card-container {
+           
+        }
+
+        .judul {
+            color: #FFD700; /* Gold color */
+            font-size: 70px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .deksjudul {
+            color: #FFFFFF;
+            font-size: 24px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        
+        .container {
+          margin-top: 100px;
+            display: flex;
+            gap: 250px;
+            justify-content: center;
+            padding: 60px;
+            border:  1px solid ;
+            border-radius: 50px;
+        }
+
+        .card-about {
+          position: relative;
+          top: 90px;
+            color: rgb(255, 255, 255);
+       padding: 5px 0 50px;
+           background-color: rgb(0, 0, 0);
+           
+        }
+
+        .title1{
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .counter {
+            font-size: 3em;
+            color: #ffffff;
+        }
+
+         /* Responsive styling for mobile screens */
+         @media (max-width: 768px) {
+            .container {
+              justify-content: ;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .counter-box {
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+                padding: 15px;
+            }
+
+            .title1 {
+                font-size: 18px;
+            }
+
+            .counter {
+                font-size: 36px;
+            }
+        }
+
+        /* produk layanan */
+
+        .ert {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px;
+      margin: 0;
+      background-color: #000000;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px; /* Added gap for spacing between cards */
+    }
+
+    .card {
+      width: 100%;
+      max-width: 300px;
+      margin: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      background-color: #ffffff;
+    }
+
+    .card img {
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      padding: 15px;
+    }
+
+    .description {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .card.expanded .description {
+      max-height: 200px; /* Adjust to fit the content */
+    }
+
+    .content h2 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    .content p {
+      font-size: 1em;
+      color: #666;
+    }
+
+    .toggle-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 0 0 10px 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .toggle-btnn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background-color: #ebd40b;
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 0 0 10px 10px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    #cvc {
+      color: #fff;
+      background-color: #000000; /* Added # for hex color */
+      padding: 25px 50px; /* Added px unit */
+    }
+
+    /* end layanan */
+
+
+    .nn {
+       padding: 10px;
+       font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal
+    }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+          top: 1000%;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 6vw; /* Adjust the text size for smaller screens */
+            }
+            p {
+                font-size: 3vw;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 7vw; /* Further adjust text size for very small screens */
+            }
+            p {
+                font-size: 4vw;
+            }
+}
+        @media (max-width: 768px) {
+          cc {
+  font-family: "Kanit", system-ui;
+  font-weight: 400;
+  font-style: italic;
+}
+        }
+
+        .card-home {
+    display: flex;
+    height: 100vh; /* Pastikan ini mencakup seluruh tinggi layar */
+}
+h3 {
+  margin-top: 100px;
+  text-align: center;
+  justify-content: center;
+}
+
+.border {
+  border: 1px solid #ffffff;
+
+}
+
+cc {
+font-size: 32px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 750;
+  font-style: normal
+  color: #b9b7b7;
+  position: relative;
+  top: 150px;
+  left: 25px;
+}
+
+vv {
+  color: #6d6d6d;
+  font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 750;
+  font-style: normal
+  color: white;
+  position: relative;
+  top: 190px;
+  left: -600px;
+}
+
+.containerkotak {
+            position: relative;
+            width: 400px;
+            top: -40px;
+            left: 10px;
+        }
+
+        .frame {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            right: 1px;
+            bottom: -100px;
+            border: 1px solid #000000;
+            z-index: 1;
+            
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            display: block;
+            z-index: 0;
+        }
+
+        /* style discon*/
+
+        #discon {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffffff;
+    background-image: url(learning.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+}
+
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .countdown {
+            display: flex;
+            gap: 20px;
+        }
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2em;
+            position: relative;
+            background: conic-gradient(red 0%, yellow 0%);
+        }
+        .time-box span {
+            z-index: 1;
+            font-size: 2em;
+            font-weight: bold;
+            position: relative;
+        }
+        .label {
+            font-size: 0.5em;
+            position: absolute;
+            bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .time-box::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background-color: #282c34;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="home">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand-title"> Store Kodee Kuu</div>
+        <a href="#" class="burger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+     <div class="card-home">
+      <cc>Code kuu jasa pebuatan Website proposonal </cc>
+      <vv>jcscdhbbcdbcbb</vv>
+     </div>
+     <div class="containerkotak">
+      <div class="frame"></div>
+      <img src="learning.png" alt="Contoh Gambar" class="image">
+  </div>
+    </section>    
+
+    <section id="discon">
+      <div class="title">
+        discon 50% hingga waktu 
+      </div>
+      <div class="countdown">
+          <div class="time-box" id="hoursBox">
+              <span id="hours">00</span>
+              <div class="label"></div>
+          </div>
+          <div class="time-box" id="minutesBox">
+              <span id="minutes">00</span>
+              <div class="label"></div>
+          </div>
+          <div class="time-box" id="secondsBox">
+              <span id="seconds">00</span>
+              <div class="label"></div>
+              
+          </div>
+      </div>
+  </section>
+  
+     
+    <section id="about">
+<div class="card-about">
+ <h3>  *📢 Butuh Website Tanpa Coding? Kodee Kuu Solusinya!* </h3>
+ <div class="border"></div>
+<P class="nn ">
+    
+    
+     <br>
+    *Keunggulan:*
+    <br>
+    🚀 Cepat & Profesional  
+    <br>
+    🎨 Desain Kustom  
+    <br>
+    🛠 Fitur Lengkap  
+    <br>
+    📈 SEO Friendly  
+    <br>
+    💰 Harga Terjangkau
+    <br>
+    
+    </P>
+
+</div>
+
+  <div class="container">
+    <div class="counter-box">
+        <div class="title1">Counting Up</div>
+        <div class="counter" id="counter1">0+</div>
+    </div>
+    <div class="counter-box">
+        <div class="title1">Counting Up</div>
+        <div class="counter" id="counter2">0+</div>
+    </div>
+    <div class="counter-box">
+        <div class="title1">Counting Up</div>
+        <div class="counter" id="counter3">0+</div>
+    </div>
+</div>
+
+
+    </section>
+    <section id="EXPERIENCE" class="ert">
+        <center>
+          <h1 id="cvc">layanan kami</h1>
+        </center>
+        <div class="card-container">
+          <!-- Card Content Here -->
+          <div class="card">
+            <img src="learning.png" alt="Card Image" />
+            <div class="content">
+              <h2>paket premium</h2>
+              <p>2.000.000</p>
+              <div class="description">
+                <p>
+                  garansi 7h dari selesi nya projek <br />
+                  hosting 1 tahun <br />
+                  domain 1 tahun <br />
+                  3 revisi <br />
+                </p>
+                <a href="#" class="toggle-btnn">pesan sekarang</a>
+              </div>
+              <button class="toggle-btn">Show More</button>
+            </div>
+          </div>
+    
+          <div class="card">
+            <img src="learning.png" alt="Card Image" />
+            <div class="content">
+              <h2>paket premium</h2>
+              <p>2.000.000</p>
+              <div class="description">
+                <p>
+                  garansi 7h dari selesi nya projek <br />
+                  hosting 1 tahun <br />
+                  domain 1 tahun <br />
+                  3 revisi <br />
+                </p>
+                <a href="#" class="toggle-btnn">pesan sekarang</a>
+              </div>
+              <button class="toggle-btn">Show More</button>
+            </div>
+          </div>
+    
+          <div class="card">
+            <img src="learning.png" alt="Card Image" />
+            <div class="content">
+              <h2>paket premium</h2>
+              <p>2.000.000</p>
+              <div class="description">
+                <p>
+                  garansi 7h dari selesi nya projek <br />
+                  hosting 1 tahun <br />
+                  domain 1 tahun <br />
+                  3 revisi <br />
+                </p>
+                <a href="#" class="toggle-btnn">pesan sekarang</a>
+              </div>
+              <button class="toggle-btn">Show More</button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="learning.png" alt="Card Image" />
+            <div class="content">
+              <h2>paket premium</h2>
+              <p>2.000.000</p>
+              <div class="description">
+                <p>
+                  garansi 7h dari selesi nya projek <br />
+                  hosting 1 tahun <br />
+                  domain 1 tahun <br />
+                  3 revisi <br />
+                </p>
+                <a href="#" class="toggle-btnn">pesan sekarang</a>
+              </div>
+              <button class="toggle-btn">Show More</button>
+            </div>
+          </div>
+          <!-- Repeat for other cards -->
+
+        </div>
+      </section>
+
+    <footer>
+        by Farhan Al Fatih
+    </footer>
+
+    <script>
+        // Toggle burger menu
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+
+
+<script>
+  function countUpAnimation(target, duration, endValue) {
+      let startValue = 0;
+      let increment = endValue / (duration / 100);
+      let counterElement = document.getElementById(target);
+      
+      function updateCounter() {
+          startValue += increment;
+          if (startValue >= endValue) {
+              startValue = endValue;
+              clearInterval(interval);
+          }
+          counterElement.textContent = Math.floor(startValue) + "+";
+      }
+
+      let interval = setInterval(updateCounter, 100);
+      counterElement.classList.add('animate');
+
+      setTimeout(() => {
+          counterElement.classList.remove('animate');
+      }, duration);
+  }
+
+  countUpAnimation('counter1', 3000, 150); // 3 seconds to count to 150
+  countUpAnimation('counter2', 4000, 200); // 4 seconds to count to 200
+  countUpAnimation('counter3', 5000, 250); // 5 seconds to count to 250
+</script>
+<script>
+    document.querySelectorAll(".toggle-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".card");
+        card.classList.toggle("expanded");
+        button.textContent = card.classList.contains("expanded")
+          ? "Show Less"
+          : "Show More";
+      });
+    });
+  </script>
+
+<script>
+  const countdownDuration = 72 * 60 * 60; 
+  const endTimeKey = 'countdownEndTime';
+
+  function startCountdown(endTime) {
+      let interval = setInterval(function () {
+          let now = new Date().getTime();
+          let timeLeft = endTime - now;
+
+          if (timeLeft <= 0) {
+              clearInterval(interval);
+              timeLeft = 0;
+          }
+
+          let hours = Math.floor(timeLeft / (1000 * 60 * 60));
+          let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById('hours').textContent = hours < 10 ? "0" + hours : hours;
+          document.getElementById('minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
+          document.getElementById('seconds').textContent = seconds < 10 ? "0" + seconds : seconds;
+
+          updateCircleColor('hoursBox', hours, 24);
+          updateCircleColor('minutesBox', minutes, 60);
+          updateCircleColor('secondsBox', seconds, 60);
+      }, 1000);
+  }
+
+  function updateCircleColor(id, time, maxTime) {
+      let element = document.getElementById(id);
+      let percentage = (time / maxTime) * 100;
+      element.style.background = `conic-gradient(red 0%, red ${percentage}%, yellow ${percentage}%)`;
+  }
+
+  let countdownEndTime = localStorage.getItem(endTimeKey);
+
+  if (!countdownEndTime) {
+      countdownEndTime = new Date().getTime() + (countdownDuration * 1000);
+      localStorage.setItem(endTimeKey, countdownEndTime);
+  } else {
+      countdownEndTime = parseInt(countdownEndTime, 10);
+  }
+
+  startCountdown(countdownEndTime);
+
+
+ 
+
+
+
+</script>
+</body>
+  </html>

@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
+ <!-- feathet icons -->
+ <script src="https://kit.fontawesome.com/41afcd7c3f.js" crossorigin="anonymous"></script>
     <title>Store Kodee Kuu</title>
     <style>
         body, html {
@@ -66,7 +67,8 @@
 }
 
         .nav-links a {
-          
+         position: relative;
+         left: -50px;
             text-decoration: none;
             color: white;
             font-size: 1.1em;
@@ -220,6 +222,8 @@
       gap: 20px; /* Added gap for spacing between cards */
     }
 
+   
+
     .card {
       width: 100%;
       max-width: 300px;
@@ -230,6 +234,12 @@
       transition: transform 0.3s ease;
       background-color: #ffffff;
     }
+
+   h2 {
+    color: #000000;
+   }
+
+   
 
     .card img {
       width: 100%;
@@ -265,6 +275,7 @@
     }
 
     .toggle-btn {
+      margin-left: -30px;
       display: block;
       width: 100%;
       padding: 10px;
@@ -310,14 +321,65 @@
   font-style: normal
     }
 
-        footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
+    /* foother*/
+    footer {
+      margin-top: 50px;
+      background-color: #000000;
+      color: #fff;
+      padding: 2px;
+      text-align: center;
+    }
+   
+      #Contact {
+            background-color: #000000;
+            padding: 2px;
+            border-radius: px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            font-size: 18px;
-          top: 1000%;
+            margin: 20px;
         }
+
+    footer .sosmed {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    footer .sosmed .icon {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer .sosmed .icon a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer .sosmed .icon a i {
+      font-size: 20px;
+    }
+
+    footer .sosmed .icon a:hover {
+      color: #f39c12;
+    }
+
+    @media (max-width: 600px) {
+      footer .sosmed .icon a {
+        font-size: 14px;
+      }
+      
+      footer .sosmed .icon a i {
+        font-size: 18px;
+      }
+    }
+
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 6vw; /* Adjust the text size for smaller screens */
@@ -359,7 +421,7 @@ h3 {
 
 }
 
-cc {
+.cc {
 font-size: 32px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 750;
@@ -370,7 +432,7 @@ font-size: 32px;
   left: 25px;
 }
 
-vv {
+.vv {
   color: #6d6d6d;
   font-size: 20px;
   font-family: "Ubuntu", sans-serif;
@@ -423,6 +485,15 @@ vv {
     background-position: center;
     position: relative;
     
+}
+
+.titlem {
+  font-size: 30px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 750;
+  font-style: normal
 }
 
 
@@ -484,6 +555,143 @@ vv {
             z-index: 0;
         }
 
+        .titlem {
+    font-size: 25px;
+    font-family: "Ubuntu", sans-serif;
+    color: #ff0000;
+    position: relative;
+    top: -20px;
+  }
+
+        /* contact */
+        .dd {
+          margin-top: 150px;
+          text-align: center;
+        }
+
+
+             /* setting responsiv */
+
+        /* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) { 
+  /* Styles */
+  body {
+  height: 100vh;
+  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+  .brand-title {
+  margin-left: 40px;
+ }
+ .burger-menu {
+  position: relative;
+  left: -15px;
+  margin-left: 10px;
+ }
+ .image  {
+  opacity: 0;
+  pointer-events: none;
+ }
+ .frame {
+  display: none;
+ }
+
+ .card-home {
+  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cc {
+      position: relative;
+      left: 9px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+  .vv {
+    display: flex;
+   margin-left: 400px;
+   position: relative;
+  left: -50%;
+  }
+
+  .teks-judul   {
+    font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+    position: absolute;
+    top: 190px;
+  }
+  .titlem {
+    font-size: 25px;
+    font-family: "Ubuntu", sans-serif;
+    color: #ff0000;
+    position: relative;
+    top: -20px;
+  }
+
+  footer .sosmed .icon { 
+    display: grid;
+    position: relative;
+    top: -80px;
+    left: -65px;
+  }
+
+  .foother-teks {
+    position: relative;
+    top: 80px;
+  }
+}
+   
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  /* Styles */
+  .brand-title {
+  margin-left: 50px;
+  } 
+   
+  .burger-menu {
+  position: relative;
+  left: -25px;
+  margin-left: 10px;
+ }
+
+ .image  {
+  position: relative;
+  top: -150px;
+ }
+
+ .frame {
+  position: absolute;
+  top: -150px;
+ }
+
+ .cc {
+      position: relative;
+      left: 9px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+ .teks-judul   {
+    font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+    position: absolute;
+    top: 190px;
+    left: 20px;
+  }
+  
+ 
+   
+         
+             /* and setting responsiv */
+
     </style>
 </head>
 <body>
@@ -497,16 +705,17 @@ vv {
             <div class="line"></div>
         </a>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#EXPERIENCE">Layanan</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
 
      <div class="card-home">
-      <cc>Code kuu jasa pebuatan Website proposonal </cc>
-      <vv>jcscdhbbcdbcbb</vv>
+      <div class="cc">pebuatan Website propesonal</div>
+      <div class="vv"></div>
+      <p class="teks-judul"> jnvgfdbvghvzxhcvbhzx</p>
      </div>
      <div class="containerkotak">
       <div class="frame"></div>
@@ -515,7 +724,7 @@ vv {
     </section>    
 
     <section id="discon">
-      <div class="title">
+      <div class="titlem">
         discon 50% hingga waktu 
       </div>
       <div class="countdown">
@@ -535,7 +744,9 @@ vv {
       </div>
   </section>
   
-     
+       
+
+
     <section id="about">
 <div class="card-about">
  <h3>  *📢 Butuh Website Tanpa Coding? Kodee Kuu Solusinya!* </h3>
@@ -579,16 +790,16 @@ vv {
 
     </section>
     <section id="EXPERIENCE" class="ert">
-        <center>
+        
           <h1 id="cvc">layanan kami</h1>
-        </center>
+         
         <div class="card-container">
           <!-- Card Content Here -->
           <div class="card">
             <img src="learning.png" alt="Card Image" />
             <div class="content">
               <h2>paket premium</h2>
-              <p>2.000.000</p>
+              <p class="ll">2.000.000</p>
               <div class="description">
                 <p>
                   garansi 7h dari selesi nya projek <br />
@@ -606,7 +817,7 @@ vv {
             <img src="learning.png" alt="Card Image" />
             <div class="content">
               <h2>paket premium</h2>
-              <p>2.000.000</p>
+              <p class="ll">2.000.000</p>
               <div class="description">
                 <p>
                   garansi 7h dari selesi nya projek <br />
@@ -624,7 +835,7 @@ vv {
             <img src="learning.png" alt="Card Image" />
             <div class="content">
               <h2>paket premium</h2>
-              <p>2.000.000</p>
+              <p class="ll">2.000.000</p>
               <div class="description">
                 <p>
                   garansi 7h dari selesi nya projek <br />
@@ -638,10 +849,11 @@ vv {
             </div>
           </div>
           <div class="card">
+         
             <img src="learning.png" alt="Card Image" />
             <div class="content">
               <h2>paket premium</h2>
-              <p>2.000.000</p>
+              <p class="ll">2.000.000</p>
               <div class="description">
                 <p>
                   garansi 7h dari selesi nya projek <br />
@@ -657,11 +869,26 @@ vv {
           <!-- Repeat for other cards -->
 
         </div>
+        <section id="Contact">
+          <h1 class="dd">Contact</h1>
+          <p>Feel free to reach out to me for any inquiries or collaborations.</p>
+          <div class="contact-details">
+              <p><i class="fa-solid fa-phone"></i> +62 812-0000-0000</p>
+          </div>
+          <footer>
+             <p class="foother-teks"> &copy; 2024 by Farhan Al Fatih</p>
+              <div class="sosmed">
+                  <div class="icon">
+                      <a href="https://github.com/farhanalfatih"><i class="fa-brands fa-github"></i> GitHub</a>
+                      <a href="https://www.instagram.com/kodee_kuu?igsh=MXUyNDhha2E2YWgxbw=="><i class="fa-brands fa-instagram"></i> Instagram</a>
+                      <a href="https://www.youtube.com/@Farhann87"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                      <a href="https://www.tiktok.com/@alnassrsuiii?_t=8oLIpVllTcK&_r=1"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                  </div>
+              </div>
+          </footer>
       </section>
 
-    <footer>
-        by Farhan Al Fatih
-    </footer>
+ 
 
     <script>
         // Toggle burger menu
@@ -714,55 +941,74 @@ vv {
   </script>
 
 <script>
-  const countdownDuration = 72 * 60 * 60; 
-  const endTimeKey = 'countdownEndTime';
+ const countdownDuration = 60 * 60 * 60; // 72 hours in seconds
+const endTimeKey = 'countdownEndTime';
 
-  function startCountdown(endTime) {
-      let interval = setInterval(function () {
-          let now = new Date().getTime();
-          let timeLeft = endTime - now;
+function startCountdown(endTime) {
+    let interval = setInterval(function () {
+        let now = new Date().getTime();
+        let timeLeft = endTime - now;
 
-          if (timeLeft <= 0) {
-              clearInterval(interval);
-              timeLeft = 0;
-          }
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            timeLeft = 0;
+            showPopup(); // Show popup when countdown ends
+        }
 
-          let hours = Math.floor(timeLeft / (1000 * 60 * 60));
-          let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-          let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        let hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-          document.getElementById('hours').textContent = hours < 10 ? "0" + hours : hours;
-          document.getElementById('minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
-          document.getElementById('seconds').textContent = seconds < 10 ? "0" + seconds : seconds;
+        document.getElementById('hours').textContent = hours < 10 ? "0" + hours : hours;
+        document.getElementById('minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById('seconds').textContent = seconds < 10 ? "0" + seconds : seconds;
 
-          updateCircleColor('hoursBox', hours, 24);
-          updateCircleColor('minutesBox', minutes, 60);
-          updateCircleColor('secondsBox', seconds, 60);
-      }, 1000);
-  }
+        updateCircleColor('hoursBox', hours, 24);
+        updateCircleColor('minutesBox', minutes, 60);
+        updateCircleColor('secondsBox', seconds, 60);
+    }, 1000);
+}
 
-  function updateCircleColor(id, time, maxTime) {
-      let element = document.getElementById(id);
-      let percentage = (time / maxTime) * 100;
-      element.style.background = `conic-gradient(red 0%, red ${percentage}%, yellow ${percentage}%)`;
-  }
+function updateCircleColor(id, time, maxTime) {
+    let element = document.getElementById(id);
+    let percentage = (time / maxTime) * 100;
+    element.style.background = `conic-gradient(red 0%, red ${percentage}%, yellow ${percentage}%)`;
+}
 
-  let countdownEndTime = localStorage.getItem(endTimeKey);
+function showPopup() {
+    // Create a popup element
+    let popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.padding = '20px';
+    popup.style.backgroundColor = '#fff';
+    popup.style.border = '1px solid #000';
+    popup.style.zIndex = '1000';
+    popup.innerText = 'Diskon habis';
 
-  if (!countdownEndTime) {
-      countdownEndTime = new Date().getTime() + (countdownDuration * 1000);
-      localStorage.setItem(endTimeKey, countdownEndTime);
-  } else {
-      countdownEndTime = parseInt(countdownEndTime, 10);
-  }
+    // Append the popup to the body
+    document.body.appendChild(popup);
 
-  startCountdown(countdownEndTime);
+    // Remove the popup after 3 seconds
+    setTimeout(function() {
+        document.body.removeChild(popup);
+    }, 3000);
+}
 
+let countdownEndTime = localStorage.getItem(endTimeKey);
 
- 
+if (!countdownEndTime) {
+    countdownEndTime = new Date().getTime() + (countdownDuration * 1000);
+    localStorage.setItem(endTimeKey, countdownEndTime);
+} else {
+    countdownEndTime = parseInt(countdownEndTime, 10);
+}
 
-
+startCountdown(countdownEndTime);
 
 </script>
+
 </body>
-  </html>
+</html>

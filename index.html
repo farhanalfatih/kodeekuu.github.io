@@ -939,75 +939,50 @@ font-size: 32px;
       });
     });
   </script>
-
 <script>
- const countdownDuration = 60 * 60 * 60; // 72 hours in seconds
-const endTimeKey = 'countdownEndTime';
+  const countdownDuration = 72 * 60 * 60; 
+        const endTimeKey = 'countdownEndTime';
 
-function startCountdown(endTime) {
-    let interval = setInterval(function () {
-        let now = new Date().getTime();
-        let timeLeft = endTime - now;
+        function startCountdown(endTime) {
+            let interval = setInterval(function () {
+                let now = new Date().getTime();
+                let timeLeft = endTime - now;
 
-        if (timeLeft <= 0) {
-            clearInterval(interval);
-            timeLeft = 0;
-            showPopup(); // Show popup when countdown ends
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    timeLeft = 0;
+                }
+
+                let hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('hours').textContent = hours < 10 ? "0" + hours : hours;
+                document.getElementById('minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById('seconds').textContent = seconds < 10 ? "0" + seconds : seconds;
+
+                updateCircleColor('hoursBox', hours, 24);
+                updateCircleColor('minutesBox', minutes, 60);
+                updateCircleColor('secondsBox', seconds, 60);
+            }, 1000);
         }
 
-        let hours = Math.floor(timeLeft / (1000 * 60 * 60));
-        let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        function updateCircleColor(id, time, maxTime) {
+            let element = document.getElementById(id);
+            let percentage = (time / maxTime) * 100;
+            element.style.background = `conic-gradient(red 0%, red ${percentage}%, yellow ${percentage}%)`;
+        }
 
-        document.getElementById('hours').textContent = hours < 10 ? "0" + hours : hours;
-        document.getElementById('minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
-        document.getElementById('seconds').textContent = seconds < 10 ? "0" + seconds : seconds;
+        let countdownEndTime = localStorage.getItem(endTimeKey);
 
-        updateCircleColor('hoursBox', hours, 24);
-        updateCircleColor('minutesBox', minutes, 60);
-        updateCircleColor('secondsBox', seconds, 60);
-    }, 1000);
-}
+        if (!countdownEndTime) {
+            countdownEndTime = new Date().getTime() + (countdownDuration * 1000);
+            localStorage.setItem(endTimeKey, countdownEndTime);
+        } else {
+            countdownEndTime = parseInt(countdownEndTime, 10);
+        }
 
-function updateCircleColor(id, time, maxTime) {
-    let element = document.getElementById(id);
-    let percentage = (time / maxTime) * 100;
-    element.style.background = `conic-gradient(red 0%, red ${percentage}%, yellow ${percentage}%)`;
-}
-
-function showPopup() {
-    // Create a popup element
-    let popup = document.createElement('div');
-    popup.style.position = 'fixed';
-    popup.style.top = '50%';
-    popup.style.left = '50%';
-    popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.padding = '20px';
-    popup.style.backgroundColor = '#fff';
-    popup.style.border = '1px solid #000';
-    popup.style.zIndex = '1000';
-    popup.innerText = 'Diskon habis';
-
-    // Append the popup to the body
-    document.body.appendChild(popup);
-
-    // Remove the popup after 3 seconds
-    setTimeout(function() {
-        document.body.removeChild(popup);
-    }, 3000);
-}
-
-let countdownEndTime = localStorage.getItem(endTimeKey);
-
-if (!countdownEndTime) {
-    countdownEndTime = new Date().getTime() + (countdownDuration * 1000);
-    localStorage.setItem(endTimeKey, countdownEndTime);
-} else {
-    countdownEndTime = parseInt(countdownEndTime, 10);
-}
-
-startCountdown(countdownEndTime);
-
+        startCountdown(countdownEndTime);
 </script>
 
 </body>
